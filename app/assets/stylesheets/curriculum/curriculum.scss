@@ -22,7 +22,6 @@ $font-color: #4e5f72;
 }
 
 @mixin alignCenter {
-    display: flex;
     align-items: center;
 }
 
@@ -32,15 +31,13 @@ $font-color: #4e5f72;
     background-color: $background-color;
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    overflow: hidden;
     padding: 50px;
-    margin: 0;
+    margin: 0 auto;
     height: 100vh;
     @include alignCenter;
-
     &__textHeading {
         font-size: 32px;
-        margin-top: 18px;
 
         &--bold {
             font-weight: bold;
@@ -50,8 +47,6 @@ $font-color: #4e5f72;
     &__textSubHeading {
         font-size: 24px;
         width: 80%;
-        display: flex;
-        justify-content: center;
 
         p {
             text-align: center;
@@ -74,8 +69,6 @@ $font-color: #4e5f72;
     &__tab {
         font-size: 18px;
         text-align: center;
-        justify-content: center;
-        align-items: center;
         background-color: white;
         font-weight: bold;
 
@@ -169,7 +162,8 @@ $font-color: #4e5f72;
         border-radius: 8px;
         display: flex;
         flex-direction: column;
-        padding: 8px;
+        padding: 0 15px;
+        color: $font-color;
 
         &--blue {
             ul {
@@ -219,6 +213,7 @@ $font-color: #4e5f72;
 
         &--title {
             font-size: 24px;
+            padding: 0 20px;
         }
 
     }
