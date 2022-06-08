@@ -1,0 +1,225 @@
+@import "fonts";
+// variable
+body {
+    font-family: Mulish, sans-serif
+}
+
+$background-color: #e7f3ff;
+$font-color: #4e5f72;
+
+// mixins
+
+@mixin justifyCenter {
+    justify-content: center;
+}
+
+@mixin justifyLeft {
+    justify-items: left;
+}
+
+@mixin alignCenter {
+    align-items: center;
+}
+
+@mixin alignCenter {
+    display: flex;
+    align-items: center;
+}
+
+//classes
+
+.curriculum_container {
+    background-color: $background-color;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    padding: 50px;
+    margin: 0;
+    height: 100vh;
+    @include alignCenter;
+
+    &__textHeading {
+        font-size: 32px;
+        margin-top: 18px;
+
+        &--bold {
+            font-weight: bold;
+        }
+    }
+
+    &__textSubHeading {
+        font-size: 24px;
+        width: 80%;
+        display: flex;
+        justify-content: center;
+
+        p {
+            text-align: center;
+            color: $font-color;
+        }
+    }
+}
+
+
+.curriculumLevel {
+    display: grid;
+    grid-template-columns:  33% 33% 34%;
+    grid-template-rows: 72px;
+    width: 80%;
+    background-color: #b7dcff;
+    border-radius: 8px;
+    margin-top: 20px;
+
+
+    &__tab {
+        font-size: 18px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        font-weight: bold;
+
+        &:nth-of-type(1) {
+            border-radius: 8px;
+        }
+
+        &:nth-of-type(3) {
+            border-radius: 0 8px 8px 0;
+        }
+
+        &--selected {
+            font-size: 18px;
+            background-color: #0041ca;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+
+            &:nth-child(1) {
+                border-radius: 8px 0 0 0;
+            }
+
+            &:nth-child(3) {
+                border-radius: 0 8px 0 8px;
+            }
+        }
+    }
+
+    &__content {
+
+        font-size: 18px;
+        text-align: center;
+        align-items: center;
+        background-color: #b7dcff;
+        color: $font-color;
+        padding: 0 20px;
+
+        &:nth-child(9) {
+            border-radius: 0 0 8px 0;
+        }
+
+        &:nth-child(7) {
+            border-radius: 0 0 0 8px;
+        }
+
+        &--blue {
+            color: #0041ca;
+            font-weight: bold;
+        }
+
+        &--white {
+            color: white;
+            font-weight: bold;
+        }
+
+        &--selected {
+            background-color: #0f8cff;
+            font-size: 18px;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+
+            &:nth-child(1) {
+                border-radius: 8px 0 0 0;
+            }
+
+            &:nth-child(3) {
+                border-radius: 0 8px 0 8px;
+            }
+
+            &:nth-child(7) {
+                border-radius: 0 0 0 8px;
+            }
+
+            &:nth-child(9) {
+                border-radius: 0 0 8px 0;
+            }
+        }
+    }
+}
+
+.curriculumPath {
+    width: 80%;
+    display: grid;
+    grid-template-columns:  30% 30% 30%;
+    column-gap: 5%;
+    margin-top: 20px;
+
+    &__block {
+        background-color: white;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        padding: 8px;
+
+        &--blue {
+            ul {
+                list-style: none;
+            }
+
+            ul li::before {
+                content: "\2022";
+                scale: 1;
+                color: #006ada;
+                font-weight: bold;
+                display: inline-block;
+                width: 1em;
+                margin-left: -1em;
+            }
+        }
+
+        &--purple {
+            ul {
+                list-style: none;
+            }
+
+            ul li::before {
+                content: "\2022";
+                color: #9243ce;
+                font-weight: bold;
+                display: inline-block;
+                width: 1em;
+                margin-left: -1em;
+            }
+        }
+
+        &--orange {
+            ul {
+                list-style: none;
+            }
+
+            ul li::before {
+                content: "\2022";
+                color: #fc9100;
+                font-weight: bold;
+                display: inline-block;
+                width: 1em;
+                margin-left: -1em;
+            }
+        }
+
+        &--title {
+            font-size: 24px;
+        }
+
+    }
+}
